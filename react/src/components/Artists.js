@@ -14,20 +14,18 @@ const Artists =()=> {
             })
     }, [])
 
-    console.log(artists)
-
     const artistCards = artists.map(artist => {
 
-      let artistName = artist.alias === null ? `${artist.fName} ${artist.lName}` : artist.alias
+      const artistName = artist.alias === null || artist.alias === "" ? `${artist.fname} ${artist.lname}` : artist.alias
 
         return <Card 
                     key={artist.artist_id}
                     id={artist.artist_id}
                     name={artistName}
                     imgUrl={artist.imgUrl}
+                    path={'/artist'}
                 />    
-                
-    })
+     })
 
     return (
         <main className="main" id="artistsMain">

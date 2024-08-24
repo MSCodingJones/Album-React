@@ -6,9 +6,10 @@ const bandDao = {
     getInfo: (res, table, id)=> {
         con.execute(
             `SELECT al.album_id, al.title, al.yr_released, al.album_cover,
-            b.band_id, b.band, b.imgUrl
+            b.band_id, b.band, b.imgUrl, l.label
             FROM album al
             JOIN band b USING (band_id)
+            JOIN label l USING (label_id)
             WHERE ${table}_id = ${id}
             ORDER BY al.yr_released;`,
             (error, rows) => {

@@ -16,9 +16,9 @@ const Header =()=> {
                     <div className="col-md-7">
                         <nav className="nav justify-content-around text-capitalize">
                             <Link to='/about'>about</Link>
-                            <Link to='/artists'>artists</Link>
-                            <Link to="/bands">bands</Link>
-                            <Link to="/albums">albums</Link>
+                            <Link to='/artist'>artists</Link>
+                            <Link to="/band">bands</Link>
+                            <Link to="/album">albums</Link>
                         </nav>
                     </div>
                 </div>

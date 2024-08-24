@@ -8,6 +8,7 @@ import About from './components/About'
 import Artists from './components/Artists'
 import Bands from './components/Bands'
 import Albums from './components/Album'
+import Single from  './components/Single'
 
 const App =()=> {
 
@@ -17,9 +18,10 @@ const App =()=> {
             <Routes>
                 <Route path='/' element={ <Home />} />
                 <Route path='/about' element={ <About />} />
-                <Route path='/artists' element={ <Artists />} />
-                <Route path='/albums' element={ <Albums />} />
-                <Route path='/bands' element={ <Bands />} />
+                <Route path='/artist' element={ <Artists />} />
+                <Route path='/album' element={ <Albums />} />
+                <Route path='/band' element={ <Bands />} />
+                <Route path='/:path/:id' element={ <Single />} />
                 <Route path='*' element={ <ErrorPage />} />
             </Routes>
             <Footer />

@@ -1,11 +1,17 @@
+import { Link } from 'react-router-dom'
+
 const Card =(props)=> {
 
     return (
         <div className="col">
-            <div className="card">
+            <div className="card h-100">
                 <img src={`/images/${props.imgUrl}`} alt={props.name} className="img-fluid image card-img-top" />
                 <div className="card-body">
-                    <h3 className="card-title">{props.name}</h3>
+                    <h3 className="card-title">
+                       <Link to={`${props.path}/${props.id}`}>
+                       {props.name}
+                       </Link>
+                    </h3> 
                 </div>
             </div>
         </div>

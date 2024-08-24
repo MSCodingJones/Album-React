@@ -11,19 +11,21 @@ const artistDao = {
                 ELSE ar.alias
                 END alias,
             CASE
-                WHEN ar.fName IS NULL THEN ''
-                ELSE ar.fName
-                END fName,
+                WHEN ar.fname IS NULL THEN ''
+                ELSE ar.fname
+                END fname,
             CASE
-                WHEN ar.lName IS NULL THEN ''
-                ELSE ar.lName
-                END lName,
+                WHEN ar.lname IS NULL THEN ''
+                ELSE ar.lname
+                END lname,
             ar.imgUrl,
-            ar.artist_id
+            ar.artist_id,
+            l.label
             FROM album al
             JOIN artist ar USING (artist_id)
-            WHERE ${table}_id = ${id};`,
-            
+            JOIN label l USING (label_id)
+            WHERE ${table}_id = ${id}
+            ORDER BY al.yr_released;`,
             (error, rows)=> {
                 if (!error) {
                         // if (rows.length === 1) {

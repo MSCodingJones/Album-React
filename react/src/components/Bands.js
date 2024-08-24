@@ -20,6 +20,7 @@ const Bands =()=> {
             id={band.band_id}
             name={band.band}
             imgUrl={band.imgUrl}
+            path={"/band"}
         />
     })
 
